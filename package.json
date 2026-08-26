@@ -1,0 +1,14 @@
+{
+  "name": "soufiane-dev-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SOUFIANE DEV portfolio and authentication server",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "mongodb": "^7.6.0",
+    "nodemailer": "^9.0.5"
+  }
+}

@@ -1,0 +1,170 @@
+:root {
+  --dark-bg: #0d1211;
+  --dark-panel: #151c1a;
+  --dark-text: #f3f0e9;
+  --dark-muted: #a7b0a8;
+  --dark-line: rgba(243, 240, 233, 0.2);
+}
+
+body {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.site-header,
+.site-footer {
+  border-color: var(--dark-line);
+}
+
+.site-header,
+.section-pad,
+.site-footer {
+  background-color: var(--dark-bg);
+}
+
+.main-nav a:hover,
+.text-link:hover {
+  color: var(--acid);
+}
+
+.brand-mark,
+.button-primary {
+  background: var(--dark-text);
+  color: var(--dark-bg);
+}
+
+.button-primary:hover {
+  background: var(--acid);
+  color: var(--dark-bg);
+}
+
+.menu-toggle {
+  color: var(--dark-text);
+}
+
+.ticker {
+  background: var(--dark-panel);
+  color: var(--dark-text);
+}
+
+.work {
+  background: #18201d;
+}
+
+.process-step p,
+.service-item p {
+  color: var(--dark-muted);
+}
+
+.contact {
+  background: #070a09;
+}
+
+.site-footer {
+  background: #070a09;
+}
+
+.orbit-one {
+  animation: orbit-spin 18s linear infinite;
+}
+
+.orbit-two {
+  animation: orbit-spin-reverse 24s linear infinite;
+}
+
+.card-main {
+  animation: card-float 5s ease-in-out infinite;
+  box-shadow: 18px 18px 0 rgba(214, 243, 74, 0.08);
+}
+
+.card-float {
+  animation: card-float-small 4s ease-in-out 0.4s infinite;
+}
+
+.status-dot {
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+.button,
+.service-item,
+.project-image,
+.header-cta {
+  transition: transform 220ms ease, background-color 220ms ease, color 220ms ease;
+}
+
+.button:hover {
+  transform: translateY(-4px);
+}
+
+.header-cta:hover {
+  transform: translateX(4px);
+}
+
+.project-image {
+  transition: transform 500ms cubic-bezier(.2, .8, .2, 1), filter 500ms ease;
+}
+
+.project:hover .project-image {
+  transform: scale(0.975) rotate(-1deg);
+  filter: saturate(1.18);
+}
+
+.service-item:hover {
+  padding-left: 12px;
+  background: rgba(214, 243, 74, 0.04);
+}
+
+.ticker-track {
+  will-change: transform;
+}
+
+.contact-scribble {
+  animation: scribble-drift 7s ease-in-out infinite;
+}
+
+@keyframes orbit-spin {
+  to { transform: rotate(340deg); }
+}
+
+@keyframes orbit-spin-reverse {
+  to { transform: rotate(-325deg); }
+}
+
+@keyframes card-float {
+  0%, 100% { transform: rotate(8deg) translateY(0); }
+  50% { transform: rotate(6deg) translateY(-13px); }
+}
+
+@keyframes card-float-small {
+  0%, 100% { transform: rotate(-8deg) translateY(0); }
+  50% { transform: rotate(-5deg) translateY(-9px); }
+}
+
+@keyframes status-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(214, 243, 74, 0.45); }
+  50% { box-shadow: 0 0 0 7px rgba(214, 243, 74, 0); }
+}
+
+@keyframes scribble-drift {
+  0%, 100% { transform: rotate(-10deg) translateY(0); }
+  50% { transform: rotate(-7deg) translateY(-10px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .main-nav.open {
+    background: var(--dark-panel);
+  }
+
+  .service-item:hover {
+    padding-left: 6px;
+  }
+}

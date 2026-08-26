@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Log in or create your SOUFIANE DEV account.">
+  <meta name="theme-color" content="#050607">
+  <title>Account — SOUFIANE DEV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dark-theme.css">
+  <link rel="stylesheet" href="premium.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-page">
+  <div class="auth-grid" aria-hidden="true"></div>
+  <header class="auth-header">
+    <a class="brand" href="index.html" aria-label="Back to SOUFIANE DEV home"><span class="brand-mark">SD</span><span>SOUFIANE DEV</span></a>
+    <a class="auth-back" href="index.html">Back to studio <span>↗</span></a>
+  </header>
+  <main class="auth-page-main">
+    <section class="auth-page-panel" aria-labelledby="auth-page-title">
+      <div class="auth-page-intro"><p class="eyebrow">SOUFIANE DEV / ACCOUNT</p><h1 id="auth-page-title">Welcome <em>back.</em></h1><p id="auth-page-subtitle">Log in to continue to your local account.</p></div>
+      <div class="auth-tabs" id="auth-tabs" role="tablist" aria-label="Account actions"><button type="button" class="auth-tab" id="login-tab" role="tab" aria-selected="true">Log in</button><button type="button" class="auth-tab" id="signup-tab" role="tab" aria-selected="false">Sign up</button></div>
+      <form class="auth-page-form" id="auth-page-form" novalidate>
+        <label class="auth-page-field" id="auth-name-field" hidden>Full name<input name="name" type="text" autocomplete="name" placeholder="Your name"></label>
+        <label class="auth-page-field" id="auth-email-field">Email<input name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+        <label class="auth-page-field" id="auth-password-field">Password<input name="password" type="password" autocomplete="current-password" placeholder="At least 6 characters" minlength="6" required></label>
+        <label class="auth-page-field" id="verification-field" hidden>Verification code<input name="code" type="text" inputmode="numeric" autocomplete="one-time-code" placeholder="6-digit code" pattern="[0-9]{6}" maxlength="6"></label>
+        <p class="auth-page-message" role="status" aria-live="polite"></p>
+        <button class="button button-primary auth-page-submit" type="submit">Log in <span>↗</span></button>
+      </form>
+      <button class="resend-code" id="resend-code" type="button" hidden>Resend verification code</button>
+      <p class="auth-storage-note">Your account is securely handled by the local Node.js server.</p>
+    </section>
+  </main>
+  <script src="auth-page.js?v=3"></script>
+</body>
+</html>
