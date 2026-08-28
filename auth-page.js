@@ -65,8 +65,8 @@ form.addEventListener('submit', async (event) => {
     const endpoint = verificationPending ? '/api/auth/verify' : `/api/auth/${mode}`;
     const payload = verificationPending ? { email, code: data.get('code') } : { name: data.get('name'), email, password: data.get('password') };
     const response = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: 'include', body: JSON.stringify(payload) });
-    const result = await response.json();
-    if (!response.ok) throw new Error(result.error || 'Authentication failed.');
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(result.error || `Authentication failed (HTTP ${response.status}).`);
     if (verificationPending) {
       message.textContent = 'Email verified. Redirecting to your profile...';
       window.setTimeout(() => { window.location.href = 'index.html'; }, 700);

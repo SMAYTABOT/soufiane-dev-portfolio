@@ -719,7 +719,10 @@ async function me(event) {
 exports.handler = async (event) => {
   try {
     const method = event.httpMethod;
-    const pathname = event.path;
+    const rawPath = event.path || (event.rawUrl ? new URL(event.rawUrl).pathname : '');
+    const pathname = rawPath.startsWith('/.netlify/functions/api')
+      ? `/api${rawPath.replace(/^\/.netlify\/functions\/api/, '')}`
+      : rawPath;
 
     if (
       method === 'POST' &&
