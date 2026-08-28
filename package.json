@@ -4,7 +4,7 @@
   "private": true,
   "description": "SOUFIANE DEV portfolio and authentication server",
   "scripts": {
-    "dev": "node local-server.js"
+    "dev": "node server.js"
   },
   "dependencies": {
     "dotenv": "^17.4.2",
