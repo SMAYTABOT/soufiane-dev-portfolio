@@ -284,10 +284,12 @@ async function handleAuth(event, pathname) {
           `Your verification code is ${verificationCode}. ` +
           'It expires in 10 minutes.'
       });
-    } catch {
+    } catch (error) {
       await usersCollection.deleteOne({
         _id: user._id
       });
+
+      console.error('Verification email delivery failed:', error.message);
 
       return json(502, {
         error:
